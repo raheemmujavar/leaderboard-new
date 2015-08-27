@@ -8,7 +8,7 @@ Leaderboards backed by [Redis](http://redis.io) in Node.js. Initially written fo
 Installation
 ------------
 
-    $ npm install leaderboard
+    $ npm install -g leaderboard-new
 
 API
 ---
