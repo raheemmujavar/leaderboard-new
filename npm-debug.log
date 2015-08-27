@@ -1,0 +1,31 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.4
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/usr/raheem/leaderboard/lmodule/node_modules/leaderboard',
+7 silly cache add   type: 'directory' }
+8 error addLocal Could not install /usr/raheem/leaderboard/lmodule/node_modules/leaderboard
+9 verbose stack Error: Adding a cache directory to the cache will make the world implode.
+9 verbose stack     at addLocalDirectory (/usr/local/lib/node_modules/npm/lib/cache/add-local.js:54:45)
+9 verbose stack     at addLocal (/usr/local/lib/node_modules/npm/lib/cache/add-local.js:39:5)
+9 verbose stack     at /usr/local/lib/node_modules/npm/lib/cache.js:287:9
+9 verbose stack     at zalgoSafe (/usr/local/lib/node_modules/npm/node_modules/dezalgo/dezalgo.js:20:10)
+9 verbose stack     at finalize (/usr/local/lib/node_modules/npm/node_modules/realize-package-specifier/index.js:37:5)
+9 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/realize-package-specifier/index.js:25:7
+9 verbose stack     at FSReqWrap.oncomplete (fs.js:95:15)
+10 verbose cwd /usr/raheem/leaderboard/lmodule/node_modules/leaderboard
+11 error Linux 3.13.0-62-generic
+12 error argv "node" "/usr/local/bin/npm" "publish"
+13 error node v0.12.4
+14 error npm  v2.11.3
+15 error Adding a cache directory to the cache will make the world implode.
+16 error If you need help, you may report this error at:
+16 error     <https://github.com/npm/npm/issues>
+17 verbose exit [ 1, true ]
