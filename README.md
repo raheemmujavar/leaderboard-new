@@ -1,14 +1,14 @@
 Leaderboard
 -----------
 
-Leaderboards backed by [Redis](http://redis.io) in Node.js. Initially written for the [Minefield](http://mienfield.com) HTML5 game. Inspired by [Agoragames' Leaderboard](https://github.com/agoragames/leaderboard).
+Leaderboards backed by [Redis](http://redis.io) in Node.js. 
 
-[![Build Status]](https://github.com/raheemmujavar/leaderboard-new)
+[![Build Status]](https://github.com/raheemmujavar/redis-leaderboard)
 
 Installation
 ------------
 
-    $ npm install -g leaderboard-new
+    $ npm install redis-leaderboard
 
 API
 ---
