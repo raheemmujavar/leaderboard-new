@@ -3,12 +3,12 @@ Leaderboard
 
 Leaderboard backed by [Redis](http://redis.io) in Node.js. 
 
-[![Build Status](https://www.npmjs.com/package/redis-leaderboard)](https://www.npmjs.com/package/redis-leaderboard)
+[![Build Status](https://www.npmjs.com/package/leaderboard-new)](https://www.npmjs.com/package/leaderboard-new)
 
 Installation
 ------------
 
-    $ npm install redis-leaderboard
+    $ npm install leaderboard-new
 
 API
 ---
