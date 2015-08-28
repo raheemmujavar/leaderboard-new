@@ -1,7 +1,7 @@
 {
   "name": "redis-leaderboard",
   "description": "Leaderboards backed by Redis in Node.js",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": {
     "name": "raheemmujavar",
     "email": "raheemmujavar@gmail.com"
@@ -17,10 +17,10 @@
     "test": "./node_modules/mocha/bin/mocha"
   },
   "readmeFilename": "README.md",
-  "_id": "redis-leaderboard@1.0.6",
+  "_id": "redis-leaderboard@1.0.7",
   "dist": {
     "shasum": "4e1eafdf7fa4d6ae34bf602f4b040043f8b1650e",
-    "tarball": "http://registry.npmjs.org/redis-leaderboard/-/redis-leaderboard-1.0.6.tgz"
+    "tarball": "http://registry.npmjs.org/redis-leaderboard/-/redis-leaderboard-1.0.7.tgz"
   },
   "_from": "redis-leaderboard@*",
   "_npmVersion": "2.11.3",
@@ -36,5 +36,5 @@
   ],
   "directories": {},
   "_shasum": "4e1eafdf7fa4d6ae34bf602f4b040043f8b1650e",
-  "_resolved": "http://registry.npmjs.org/redis-leaderboard/-/redis-leaderboard-1.0.6.tgz"
+  "_resolved": "http://registry.npmjs.org/redis-leaderboard/-/redis-leaderboard-1.0.7.tgz"
 }

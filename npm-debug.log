@@ -9,23 +9,86 @@
 7 silly cache add   scope: null,
 7 silly cache add   name: null,
 7 silly cache add   rawSpec: '.',
-7 silly cache add   spec: '/usr/raheem/leaderboard/lmodule/node_modules/leaderboard',
+7 silly cache add   spec: '/usr/raheem/leaderboard/redis-leaderboard',
 7 silly cache add   type: 'directory' }
-8 error addLocal Could not install /usr/raheem/leaderboard/lmodule/node_modules/leaderboard
-9 verbose stack Error: Adding a cache directory to the cache will make the world implode.
-9 verbose stack     at addLocalDirectory (/usr/local/lib/node_modules/npm/lib/cache/add-local.js:54:45)
-9 verbose stack     at addLocal (/usr/local/lib/node_modules/npm/lib/cache/add-local.js:39:5)
-9 verbose stack     at /usr/local/lib/node_modules/npm/lib/cache.js:287:9
-9 verbose stack     at zalgoSafe (/usr/local/lib/node_modules/npm/node_modules/dezalgo/dezalgo.js:20:10)
-9 verbose stack     at finalize (/usr/local/lib/node_modules/npm/node_modules/realize-package-specifier/index.js:37:5)
-9 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/realize-package-specifier/index.js:25:7
-9 verbose stack     at FSReqWrap.oncomplete (fs.js:95:15)
-10 verbose cwd /usr/raheem/leaderboard/lmodule/node_modules/leaderboard
-11 error Linux 3.13.0-62-generic
-12 error argv "node" "/usr/local/bin/npm" "publish"
-13 error node v0.12.4
-14 error npm  v2.11.3
-15 error Adding a cache directory to the cache will make the world implode.
-16 error If you need help, you may report this error at:
-16 error     <https://github.com/npm/npm/issues>
-17 verbose exit [ 1, true ]
+8 verbose addLocalDirectory /usr/raheem/leaderboard/lmodule/redis-leaderboard/1.0.6/package.tgz not in flight; packing
+9 verbose tar pack [ '/usr/raheem/leaderboard/lmodule/redis-leaderboard/1.0.6/package.tgz',
+9 verbose tar pack   '/usr/raheem/leaderboard/redis-leaderboard' ]
+10 verbose tarball /usr/raheem/leaderboard/lmodule/redis-leaderboard/1.0.6/package.tgz
+11 verbose folder /usr/raheem/leaderboard/redis-leaderboard
+12 info prepublish redis-leaderboard@1.0.6
+13 verbose addLocalTarball adding from inside cache /usr/raheem/leaderboard/lmodule/redis-leaderboard/1.0.6/package.tgz
+14 silly cache afterAdd redis-leaderboard@1.0.6
+15 verbose afterAdd /usr/raheem/leaderboard/lmodule/redis-leaderboard/1.0.6/package/package.json not in flight; writing
+16 verbose afterAdd /usr/raheem/leaderboard/lmodule/redis-leaderboard/1.0.6/package/package.json written
+17 silly publish { name: 'redis-leaderboard',
+17 silly publish   description: 'Leaderboards backed by Redis in Node.js',
+17 silly publish   version: '1.0.6',
+17 silly publish   author: { name: 'raheemmujavar', email: 'raheemmujavar@gmail.com' },
+17 silly publish   devDependencies: { mocha: '1.5.0', async: '0.1.22' },
+17 silly publish   dependencies: { redis: '0.8.1' },
+17 silly publish   scripts: { test: './node_modules/mocha/bin/mocha' },
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   _id: 'redis-leaderboard@1.0.6',
+17 silly publish   dist:
+17 silly publish    { shasum: '4e1eafdf7fa4d6ae34bf602f4b040043f8b1650e',
+17 silly publish      tarball: 'http://registry.npmjs.org/redis-leaderboard/-/redis-leaderboard-1.0.6.tgz' },
+17 silly publish   _from: '.',
+17 silly publish   _npmVersion: '2.11.3',
+17 silly publish   _npmUser: { name: 'raheemmujavar', email: 'raheemmujavar@gmail.com' },
+17 silly publish   maintainers: [ { name: 'raheemmujavar', email: 'raheemmujavar@gmail.com' } ],
+17 silly publish   directories: {},
+17 silly publish   _shasum: 'f42d5dd213224a6026a2796ba848611414398a27',
+17 silly publish   _resolved: 'http://registry.npmjs.org/redis-leaderboard/-/redis-leaderboard-1.0.6.tgz',
+17 silly publish   readme: 'Leaderboard\n-----------\n\nLeaderboard backed by [Redis](http://redis.io) in Node.js. \n\n[![Build Status](https://www.npmjs.com/package/redis-leaderboard)](https://www.npmjs.com/package/redis-leaderboard)\n\nInstallation\n------------\n\n    $ npm install redis-leaderboard\n\nAPI\n---\n\n#Constructor\n\n  var lb = new Leaderboard(\'name\', [options], [redisOptions|redisClient])\n\nCreates a new leaderboard or attaches to an existing leaderboard.\n\n###Options\n\n  - `pageSize` - default: `0`\n\n    Page size to be used when paging through the leaderboard.\n\n  - `reverse` - default: `false`\n\n    If `true` various methods will return results in lowest-to-highest order.\n\n##Methods\n\n  - `add(member, score, [λ])`\n\n    Ranks a member in the leaderboard.\n\n        lb.add(\'raheem\', 100, function(err) {\n          // no arguments except err\n        });\n\n  - `incr(member, score, [λ])`\n\n    Increments the score of a member by provided value and ranks it in the leaderboard. Decrements if negative.\n\n        lb.incr(\'raheem\', 2, function(err) {\n          // no arguments except err\n        });\n    now the score to the member raheem would be 102.\n\n  - `rank(member, λ)`\n\n    Retrieves the rank for a member in the leaderboard.\n\n        lb.rank(\'raheem\', function(err, rank) {\n          // rank - current position, -1 if a member doesn\'t\n          // fall within the leaderboard\n        });\n\n  - `score(member, λ)`\n\n    Retrieves the score for a member in the leaderboard.\n\n        lb.score(\'raheem\', function(err, score) {\n          // score - current score, -1 if a member doesn\'t\n          // fall within the leaderboard\n        });\n\n  - `list([page], λ)`\n\n    Retrieves a page of leaders from the leaderboard.\n\n        lb.list(function(err, list) {\n          // list - list of leaders are ordered from\n          // the highest to the lowest score\n          // [\n          //   {member: \'member1\', score: 30},\n          //   {member: \'member2\', score: 20},\n          //   {member: \'member3\', score: 10}\n          // ]\n        });\n\n  - `at(rank, λ)`\n\n    Retrieves a member on the spicified ranks.\n\n        lb.at(2, function(err, member) {\n          // member - member at the specified rank i.e who has 2nd rank,\n          // null if a member is not found\n          // {\n          //   member: \'member1\',\n          //   score: 30\n          // }\n        });\n\n  - `rm(member, [λ])`\n\n    Removes a member from the leaderboard.\n\n        lb.rm(\'raheem\', function(err, removed) {\n          // removed - false in case the removing member \n          // doesn\'t exist in the leaderboard.\n          // true - successful remove\n        });\n\n  - `total([λ])`\n\n    Retrieves the total number of members in the leaderboard.\n\n        lb.total(function(err, number) {\n          // captain obvious\n        });\n\n  - `rangevalue(min, max, options, [λ])`\n\n    Returns the number of elements in the sorted set at key with a score between min and max.\n\n        var options = {\n          a:"exclusive",\n          b:"inclusive"\n        }\n\n        lb.rangevalue(90,110,options,function(err,number){\n            // returns a number -- how many records in between score 91 (here 90 exclusive) to 110\n            // returns 0 if no records found\n        })\n\n  - `rangeByScoreInfo(min, max, options, [λ])`\n\n    Returns all the elements in the sorted set at key with a score between min and max.\n\n        var options = {\n          a:"exclusive",\n          b:"inclusive"\n        }\n\n        lb.rangeByScoreInfo(90,110,options,function(err,number){\n            // returns all records in between score 91 (here 90 exclusive) to 110\n            // returns null if no records found\n        })\n\n   - `removeRangeByRank(min, max, [λ])`\n\n          Removes all elements in the sorted set stored at key with rank between min rank and max rank. min rank starts from 0.\n\n          lb.removeRangeByRank(0,2,function(err,number){\n              // returns number of records removed if true\n              // returns 0 if no records removed\n          })\n\n   - `removeRangeByScore(min, max, options, [λ])`\n\n        Removes all elements in the sorted set stored at key with a score between min and max.\n\n          var options = {\n            a:"exclusive",\n            b:"inclusive"\n          }\n\n          lb.removeRangeByScore(90,110,options,function(err,number){\n              // remove all records in between score 91 (here 90 exclusive) to 110\n              // returns null if no records found\n          })\n\n   - `getScoreByPattern(pattern, [λ])`\n\n          scan in the sorted set for matching pattern and retrieve all matching records.\n\n          var pattern = "rah"\n\n          lb.getScoreByPattern(pattern,function(err,number){\n               //return matching elements in array\n               //[{member : "raheem",score:100},{member:"raheja",score:110}]\n               //return empty array if no records match\n\n          })\n\n\n\n## License \n\n[MIT](http://en.wikipedia.org/wiki/MIT_License#License_terms). Copyright (c) 2015 raheemmujavar &lt;raheemmujavar@gmail.com&gt;\n\n#### Author: [raheemmujavar](https://github.com/raheemmujavar/leaderboard-new)\n',
+17 silly publish   gitHead: '07ce4bb7f148dca512f1c2b155a63c63425667fd' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name redis-leaderboard
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/redis-leaderboard
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /usr/raheem/leaderboard/lmodule/redis-leaderboard/1.0.6/package.tgz
+25 verbose request uri https://registry.npmjs.org/redis-leaderboard
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 10:21:30 AM
+28 verbose request using bearer token for auth
+29 verbose request id 84298bdc183fbae6
+30 http request PUT https://registry.npmjs.org/redis-leaderboard
+31 http 403 https://registry.npmjs.org/redis-leaderboard
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=60',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Fri, 28 Aug 2015 04:53:15 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-sin6924-SIN',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1440737593.852867,VS0,VE1676' }
+33 verbose request invalidating /usr/raheem/leaderboard/lmodule/registry.npmjs.org/redis-leaderboard on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 1.0.6." : redis-leaderboard
+35 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:247:14)
+35 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+35 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:354:22)
+35 verbose stack     at Request.emit (events.js:110:17)
+35 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1207:14)
+35 verbose stack     at Request.emit (events.js:129:20)
+35 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1153:12)
+35 verbose stack     at IncomingMessage.emit (events.js:129:20)
+35 verbose stack     at _stream_readable.js:908:16
+35 verbose stack     at process._tickCallback (node.js:355:11)
+36 verbose statusCode 403
+37 verbose pkgid redis-leaderboard
+38 verbose cwd /usr/raheem/leaderboard/redis-leaderboard
+39 error Linux 3.13.0-62-generic
+40 error argv "node" "/usr/local/bin/npm" "publish"
+41 error node v0.12.4
+42 error npm  v2.11.3
+43 error code E403
+44 error "You cannot publish over the previously published version 1.0.6." : redis-leaderboard
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]

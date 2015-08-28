@@ -180,3 +180,5 @@ Creates a new leaderboard or attaches to an existing leaderboard.
 ## License 
 
 [MIT](http://en.wikipedia.org/wiki/MIT_License#License_terms). Copyright (c) 2015 raheemmujavar &lt;raheemmujavar@gmail.com&gt;
+
+#### Author: [raheemmujavar](https://github.com/raheemmujavar/leaderboard-new)
